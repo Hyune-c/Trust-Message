@@ -13,7 +13,7 @@ public class Witness {
     this.testimony = testimony;
   }
 
-  public String doTestimoty() {
+  public String doTestimony() {
     return testimony;
   }
 }

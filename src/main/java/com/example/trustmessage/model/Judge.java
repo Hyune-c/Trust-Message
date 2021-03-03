@@ -20,6 +20,6 @@ public class Judge {
     // 2. 목격자를 불러오라.
     witness = communicator.findWitness();
     // 4. 증언하라.
-    witness.doTestimoty();
+    System.out.println(witness.doTestimony());
   }
 }
