@@ -2,7 +2,8 @@ package com.example.trustmessage.model;
 
 /*
   1. 전달자 - 토끼를 알고 있고
-  2. 재판을 진행할 책임이 있는
+  2. 증언이 필요하지만 아직 증인이 누구인지 모른채로
+  3. 재판을 진행할 책임이 있는
 
   판사
  */
@@ -16,10 +17,13 @@ public class Judge {
   }
 
   // 1. 재판하라.
-  public void doJudge() {
+  public String doJudge() {
     // 2. 목격자를 불러오라.
     witness = communicator.findWitness();
     // 4. 증언하라.
-    System.out.println(witness.doTestimony());
+    // 증언할 것이 있으면 유죄. 없으면 무죄.
+    return (witness.doTestimony().isEmpty())
+        ? "Innocence"
+        : "Guilty";
   }
 }
