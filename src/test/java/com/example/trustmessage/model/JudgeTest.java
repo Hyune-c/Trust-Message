@@ -19,7 +19,7 @@ class JudgeTest {
     Judge king = new Judge(rabbit);
 
     // when
-    // 4. `어제왕국` 의 일을 재판하라!
+    // 4. `어제분수` 의 일을 재판하라!
     String judgeResult = king.doJudge();
 
     // then

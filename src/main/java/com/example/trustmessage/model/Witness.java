@@ -16,6 +16,8 @@ public class Witness {
   }
 
   public String doTestimony(String testimonyKey) {
-    return testimonyMap.get(testimonyKey);
+    return (testimonyMap.containsKey(testimonyKey))
+        ? testimonyMap.get(testimonyKey)
+        : "";
   }
 }
