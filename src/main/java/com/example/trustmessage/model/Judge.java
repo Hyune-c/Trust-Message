@@ -22,7 +22,10 @@ public class Judge {
     witness = communicator.findWitness();
     // 4. 증언하라.
     // 증언할 것이 있으면 유죄. 없으면 무죄.
-    return (witness.doTestimony().isEmpty())
+    String testimonyKey = "어제왕국";
+    String testimony = witness.doTestimony(testimonyKey);
+    System.out.println(testimony);
+    return (testimony.isEmpty())
         ? "Innocence"
         : "Guilty";
   }

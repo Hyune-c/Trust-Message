@@ -1,5 +1,7 @@
 package com.example.trustmessage.model;
 
+import java.util.Map;
+
 /*
   1. 증언할 책임이 있는
 
@@ -7,13 +9,13 @@ package com.example.trustmessage.model;
  */
 public class Witness {
 
-  private final String testimony;
+  private final Map<String, String> testimonyMap;
 
-  public Witness(String testimony) {
-    this.testimony = testimony;
+  public Witness(Map<String, String> testimonyMap) {
+    this.testimonyMap = testimonyMap;
   }
 
-  public String doTestimony() {
-    return testimony;
+  public String doTestimony(String testimonyKey) {
+    return testimonyMap.get(testimonyKey);
   }
 }
