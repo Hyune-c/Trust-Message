@@ -9,30 +9,8 @@ import com.example.trustmessage.model2.PartDto;
  */
 public class ProductService {
 
-  public boolean createComputer(PartDto partDto) {
-    if (partDto.getSteal() && partDto.getSemiconductor()) {
-      // do work...
-      return true;
-    }
-
-    return false;
-  }
-
-  public boolean createFan(PartDto partDto) {
-    if (partDto.getSteal() && partDto.getPropellers() && partDto.getButton()) {
-      // do work...
-      return true;
-    }
-
-    return false;
-  }
-
-  public boolean createPhone(PartDto partDto) {
-    if (partDto.getSteal() && partDto.getSemiconductor() && partDto.getButton()) {
-      // do work...
-      return true;
-    }
-
-    return false;
+  public boolean create(PartDto partDto) {
+    // do work...
+    return true;
   }
 }

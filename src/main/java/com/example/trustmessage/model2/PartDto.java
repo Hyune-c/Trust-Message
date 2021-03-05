@@ -14,15 +14,45 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PartDto {
 
+  public enum PartOf {
+    COMPUTER,
+    FAN,
+    PHONE,
+    UNKNOWN
+  }
+
+  private PartDto.PartOf partOf;
+
   // 모든 곳에서 필요합니다.
-  private Boolean steal;
+  private Boolean steal = false;
 
   // 컴퓨터와 핸드폰에서 필요합니다.
-  private Boolean semiconductor;
+  private Boolean semiconductor = false;
 
   // 선풍기에서 필요합니다.
-  private Boolean propellers;
+  private Boolean propellers = false;
 
   // 선풍기와 핸드폰에서 필요합니다.
-  private Boolean button;
+  private Boolean button = false;
+
+  public boolean naming(PartDto.PartOf partOf) {
+    if (partOf.equals(PartOf.COMPUTER) && this.getSteal() && this.getSemiconductor()) {
+      this.partOf = PartOf.COMPUTER;
+    }
+
+    if (partOf.equals(PartOf.FAN) && this.getSteal() && this.getPropellers() && this.getButton()) {
+      this.partOf = PartOf.FAN;
+    }
+
+    if (partOf.equals(PartOf.PHONE) && this.getSteal() && this.getSemiconductor() && this.getButton()) {
+      this.partOf = PartOf.PHONE;
+    }
+
+    if (this.partOf == null) {
+      this.partOf = PartOf.UNKNOWN;
+      return false;
+    }
+
+    return true;
+  }
 }
