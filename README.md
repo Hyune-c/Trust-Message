@@ -2,6 +2,8 @@
 
 `객체지향의 사실과 오해` 를 읽고 `책임과 메시지` 에 대한 생각을 코드로 작성했습니다.
 
+[Blog Link](https://hyune-c.tistory.com/7)
+
 # Branch
 
 ### /v1
